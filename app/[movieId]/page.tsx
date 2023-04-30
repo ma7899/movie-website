@@ -1,10 +1,10 @@
-import Image from "next/image";
+import Image from 'next/image';
 
 export const metadata = {
-  title: "moviseb",
-  description: "Movie website for the Internet",
+  title: 'moviseb',
+  description: 'Movie website for the Internet',
   icons: {
-    icon: "../public/Assets/Icons/logo.jpeg",
+    icon: '../public/Assets/Icons/logo.jpeg',
   },
 };
 
@@ -24,7 +24,7 @@ const MovieDetail = async ({ params }: any) => {
     `${process.env.baseUrl}/movie/${movieId}?api_key=${process.env.API_KEY}`
   );
   const res = await data.json();
-  const imagePath = "https://image.tmdb.org/t/p/original";
+  const imagePath = 'https://image.tmdb.org/t/p/original';
 
   return (
     <div>
@@ -36,11 +36,11 @@ const MovieDetail = async ({ params }: any) => {
           {res.status}
         </h2>
         <Image
-          className="my-12 w-full"
           src={imagePath + res.backdrop_path}
           alt=""
-          width={4000}
-          height={4000}
+          className="my-12"
+          width={2000}
+          height={800}
           quality={100}
           priority
         />
